@@ -42,7 +42,7 @@ const Home = () => {
             const worksheet = workbook.Sheets[worksheetName];
             const data = XLSX.utils.sheet_to_json(worksheet);
             setExcelData(data);
-            console.log(data)
+            // console.log(data)
         }
     }
 

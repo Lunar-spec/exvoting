@@ -28,7 +28,7 @@ const Login = () => {
             navigate('/home')
             // console.log(response)
         } catch (error) {
-            console.log(error)
+            // console.log(error)
             alert("Please recheck your credentials")
         }
         // console.log('Login form submitted:', { username, password });

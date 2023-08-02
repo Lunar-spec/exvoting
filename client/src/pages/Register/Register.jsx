@@ -17,18 +17,18 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${import.meta.env.VITE_SERVER}/users/reg`, {
+      await axios.post(`${import.meta.env.VITE_SERVER}/users/reg`, {
         username,
         password,
         constituency,
         role: 'normal_user',
-      }) 
-      console.log(response.data)
+      })
+      // console.log(response.data)
       navigate('/')
       alert("Registered, you may begin with your login")
     } catch (error) {
       alert("Please check your credentials")
-      console.log(error)
+      // console.log(error)
     }
     // console.log('Registration form submitted:', { username, password, selectedConstituency });
   };
