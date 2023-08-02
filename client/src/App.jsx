@@ -11,9 +11,6 @@ import './App.scss'
 
 
 function App() {
-
-    const userData = localStorage.getItem('role')
-
     return (
         <>
             <Header />
@@ -21,21 +18,9 @@ function App() {
                 <Route path="/" element={<Login />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/register" element={<Register />} />
-                {
-                    userData === 'superadmin' ?
-                        (
-                            <Route path="/superadmin" element={<SuperAdmin />} />
-                        )
-                        :
-                        userData === 'constituency_admin' ?
-                            (
-                                <Route path="/admin" element={<Admin />} />
-                            )
-                            :
-                            (
-                                <Route path='/' element={<Navigate to={<Login/>} replace/>} />
-                            )
-                }
+                <Route path="/superadmin" element={<SuperAdmin />} />
+                <Route path="/admin" element={<Admin />} />
+                <Route path='/' element={<Navigate to={<Login />} replace />} />
                 <Route path="/*" element={<NotFound />} />
             </Routes>
         </>

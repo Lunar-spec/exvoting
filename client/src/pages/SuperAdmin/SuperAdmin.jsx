@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const SuperAdmin = () => {
+
   const [users, setUsers] = useState([]);
   const [editedConstituencies, setEditedConstituencies] = useState({});
 
