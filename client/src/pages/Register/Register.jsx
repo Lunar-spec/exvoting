@@ -17,7 +17,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/users/reg', {
+      const response = await axios.post(`${import.meta.env.VITE_SERVER}/users/reg`, {
         username,
         password,
         constituency,

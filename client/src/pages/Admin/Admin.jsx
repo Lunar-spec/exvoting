@@ -19,7 +19,7 @@ const Admin = () => {
 
   const fetchAllUsers = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/users');
+      const response = await axios.get(`${import.meta.env.VITE_SERVER}/users`);
       setUsers(response.data);
     } catch (error) {
       alert('Error fetching users data');
@@ -28,7 +28,7 @@ const Admin = () => {
 
   const handleEdit = async (userId, role, constituency) => {
     try {
-      await axios.put(`http://localhost:5000/users/superAdmin`, { userId, role, constituency });
+      await axios.put(`${import.meta.env.VITE_SERVER}/users/superAdmin`, { userId, role, constituency });
       alert('User data updated successfully!');
       fetchAllUsers(); // Refresh the users list after the update
     } catch (error) {
@@ -38,7 +38,7 @@ const Admin = () => {
 
   const handleDelete = async (userId) => {
     try {
-      await axios.delete(`http://localhost:5000/users/superAdmin/${userId}`);
+      await axios.delete(`${import.meta.env.VITE_SERVER}/users/superAdmin/${userId}`);
       alert('User deleted successfully!');
       fetchAllUsers(); // Refresh the users list after the deletion
     } catch (error) {
